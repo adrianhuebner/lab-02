@@ -24,10 +24,25 @@ Horn.prototype.render = function(){
   hornCopy.attr('class',this.title);
 };
 
-Horn.prototype.dropdown = function() {
+function dropDown() {
+  let uniqueElements = [];
+
   let optionHtml = $('#drop-down');
-  optionHtml.append($('<option></option>').attr('value', this.keyword).text(this.keyword));
-};
+
+  Horn.allHorns.forEach(image => {
+    let bananas = true;
+    uniqueElements.forEach(uniqueImage => {
+      if(image.keyword === uniqueImage){
+        bananas = false;
+      }
+    });
+    if(bananas){
+      optionHtml.append($('<option></option>').attr('value', image.keyword).text(image.keyword));
+      uniqueElements.push(image.keyword);
+    }
+  });
+  console.log('hello');
+}
 
 
 Horn.readJson = () => {
@@ -42,7 +57,9 @@ Horn.readJson = () => {
 
 Horn.loadHorns = () => {
   Horn.allHorns.forEach(horn => horn.render());
-  Horn.allHorns.forEach(horn => horn.dropdown());
+  console.log('in the load horns');
+  dropDown();
+  // Horn.allHorns.forEach(horn => horn.dropdown());
 };
 
 

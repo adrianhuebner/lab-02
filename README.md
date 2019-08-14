@@ -13,7 +13,10 @@
 ## Feature 2
 
 - Name of Feature: Filter Images
-- Estimated time to complete: 2 sausage finger pokes
-- Start time: yes
-- End time: 
-- Actual time that it took: 
+- Estimated time to complete: 1 hour
+- Start time: 1015
+- End time: 1129
+- Actual time that it took: 1.15 hour
+
+## Feature 3
+
