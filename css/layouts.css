@@ -1,19 +1,16 @@
 img{
-  width: 100%;
+  width: 200px;
   height: auto;
 }
-.photo-template{
-  float: left;
-  width: 300px;
+main{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
   text-align: center;
-  margin: 1.25%;
+  justify-content: center; 
 }
-footer{
-  clear: both;
+p{
+  width: 200px;
 }
-select{
-  margin-left: 50%;
-}
-img{
-  margin: 10%;
-}
+
