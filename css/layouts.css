@@ -1,0 +1,19 @@
+img{
+  width: 100%;
+  height: auto;
+}
+.photo-template{
+  float: left;
+  width: 300px;
+  text-align: center;
+  margin: 1.25%;
+}
+footer{
+  clear: both;
+}
+select{
+  margin-left: 50%;
+}
+img{
+  margin: 10%;
+}

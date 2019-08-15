@@ -15,7 +15,7 @@ Horn.allHorns = [];
 Horn.prototype.render = function(){
   $('main').append('<div class = "copy"></div>');
   let hornCopy = $('div[class = "copy"]');
-  let hornHtml = $('#photo-template').html();
+  let hornHtml = $('.photo-template').html();
 
   hornCopy.html(hornHtml);
 
@@ -23,7 +23,7 @@ Horn.prototype.render = function(){
   hornCopy.find('h2').text(this.title);
   hornCopy.find('p').text(this.description);
   hornCopy.removeClass('copy');
-  hornCopy.attr('class',this.title);
+  hornCopy.attr('class', 'photo-template');
   hornCopy.find('img').attr('alt',this.keyword);
 };
 
