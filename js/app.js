@@ -6,6 +6,8 @@ function Horn(horn){
   this.description = horn.description;
   this.keyword = horn.keyword;
   this.horns = horn.horns;
+
+  Horn.allHorns.push(this);
 }
 
 Horn.allHorns = [];
@@ -22,6 +24,7 @@ Horn.prototype.render = function(){
   hornCopy.find('p').text(this.description);
   hornCopy.removeClass('copy');
   hornCopy.attr('class',this.title);
+  hornCopy.find('img').attr('alt',this.keyword);
 };
 
 function dropDown() {
@@ -49,7 +52,7 @@ Horn.readJson = () => {
   $.get('data/page-1.json')
     .then(data =>{
       data.forEach(item =>{
-        Horn.allHorns.push(new Horn(item));
+        new Horn(item);
       });
     })
     .then(Horn.loadHorns);
@@ -59,8 +62,11 @@ Horn.loadHorns = () => {
   Horn.allHorns.forEach(horn => horn.render());
   console.log('in the load horns');
   dropDown();
-  // Horn.allHorns.forEach(horn => horn.dropdown());
-};
-
+  $('#drop-down').on('change', function() {
+    $('div').hide();
+    const keyword = $('#drop-down option:selected').text();
+    $(`img[alt=${keyword}]`).parent().show();
+  })
+ };
 
 $(() => Horn.readJson());
