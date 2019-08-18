@@ -8,7 +8,9 @@ main{
   flex-wrap: wrap;
   height: auto;
   text-align: center;
-  justify-content: center; 
+  justify-content: space-around;
+  background-color: greenyellow;
+  border: 5px solid blueviolet;
 }
 p{
   width: 200px;
