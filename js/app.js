@@ -62,10 +62,10 @@ Horn.readJson = () => {
         })
         .then(Horn.loadHorns));
 };
-
+//Static method, this i srun on the constructor not theo bject instances themselves
 Horn.loadHorns = () => {
   page1.forEach(horn => {
-    let hornHtml = template(horn);
+    let hornHtml = template(horn)
     $('#page-1').append(hornHtml);
   });
   dropDown();
@@ -73,10 +73,18 @@ Horn.loadHorns = () => {
     $('div').hide();
     const keyword = $('#drop-down option:selected').text();
     $(`img[alt=${keyword}]`).parent().show();
-  });
-  $('#drop-down-sort').on('change', function() {
-    console.log('Hentai');
+  })
+
+  $('#drop-down-sort').on('change', () => {
+    console.log('Hello')
+    // const choice = $(this.val);
+    console.log(choice);
+    // console.log($(this.val()))
+  })
+  // $('#drop-down-sort').on('change', function() {
+  //   console.log('Hentai');
     // If first value... sort
+
 
 
     // If second value... sort
@@ -91,47 +99,63 @@ Horn.loadHorns = () => {
     //   return arr;
     // };
 
-  });
+  // })
 };
+
+
+Image.sort = function(array, property) {
+  array.sort((a, b) => {
+    return a[property] < b[property] ? -1 : 1;
+  })
+}
+
+$('#horns').on('click', () => {
+  Image.sort(allImagesOne, (this).numberofhorns);
+  console.log('Im in!!!');
+})
+// function sort(array, property) {
+//   array.sort((a, b) => {
+//   })
+// }
 
 
 $('#reset').click(function() {
   $('#drop-down').prop('selectedIndex', 0);
-  $('#page-1').empty( );
-  $('#page-2').empty( );
+  $('#page-1').empty( )
+  $('#page-2').empty( )
 
   page1.forEach(horn => {
-    const hornHtml = template(horn);
+    const hornHtml = template(horn)
     $('#page-1').append(hornHtml);
   });
-});
+})
 
 $('#page1').click(function() {
   $('#drop-down').prop('selectedIndex', 0);
-  $('#page-1').empty( );
-  $('#page-2').empty( );
+  $('#page-1').empty( )
+  $('#page-2').empty( )
 
   page1.forEach(horn => {
-    const hornHtml = template(horn);
+    const hornHtml = template(horn)
     $('#page-1').append(hornHtml);
   });
-});
+})
 
 $('#page2').click(function() {
   $('#drop-down').prop('selectedIndex', 0);
-  $('#page-1').empty( );
-  $('#page-2').empty( );
+  $('#page-1').empty( )
+  $('#page-2').empty( )
 
   page2.forEach(horn => {
-    const hornHtml = template(horn);
+    const hornHtml = template(horn)
     $('#page-2').append(hornHtml);
   });
-});
+})
 
 
 
 //////////handlebars////////////
-var source   = document.getElementById('handlebars-page-1').innerHTML;
+var source   = document.getElementById("handlebars-page-1").innerHTML;
 var template = Handlebars.compile(source);
 
 /////////////Jon's fun time happy code///////////////
@@ -139,7 +163,7 @@ let arrRGB = [];
 
 const randomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+}
 const generateRandomRGB = () => {
   for (let i = 0; i < 9; i++) {
     let r = randomNumber(0, 255);
@@ -148,7 +172,7 @@ const generateRandomRGB = () => {
     let rgbBG = `rgba(${r}, ${g}, ${b}, 1)`;
     arrRGB.push(rgbBG);
   }
-};
+}
 
 generateRandomRGB();
 
@@ -162,7 +186,7 @@ function setButtonColors() {
   }
 }
 
-setButtonColors();
+// setButtonColors();
 
 $(() => {
   Horn.readJson();

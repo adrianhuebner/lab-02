@@ -1,0 +1,42 @@
+#reset {
+  animation: colorchange 1.5s infinite; 
+  -webkit-animation: colorchange 1.5s inifintite; /* Chrome and Safari */
+}
+
+#page1 {
+  animation: colorchange 2s infinite; 
+  -webkit-animation: colorchange 2s inifintite; /* Chrome and Safari */
+}
+
+#page2 {
+  animation: colorchange 3s infinite; 
+  -webkit-animation: colorchange 3s inifintite; /* Chrome and Safari */
+}
+
+@keyframes colorchange
+{
+  0%   {background: red;}
+  25%  {background: yellow;}
+  50%  {background: blue;}
+  75%  {background: green;}
+  100% {background: red;}
+  0%   {color: purple;}
+  25%  {color: greenyellow;}
+  50%  {color: salmon;}
+  75%  {color: blueviolet;}
+  100% {color: orange;}
+}
+
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+{
+  0%   {background: red;}
+  25%  {background: yellow;}
+  50%  {background: blue;}
+  75%  {background: green;}
+  100% {background: red;}
+  0%   {color: purple;}
+  25%  {color: greenyellow;}
+  50%  {color: salmon;}
+  75%  {color: blueviolet;}
+  100% {color: orange;}
+}
