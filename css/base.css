@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Barriecito|Faster+One|Indie+Flower&display=swap');
+*{
+  box-sizing: border-box;
+}
 h1{
-  font-family: 'Roboto Slab', sans-serif;
-  font-size: 5em;
+  font-family: 'Faster One', cursive;
+  font-size: 6em;
   text-align: center;
+  letter-spacing: -10px;
 }
 h2{
-  font-family: 'Abel', sans-serif;
+  font-family: 'Barriecito', cursive;
   font-size: 2em;
 }
 p{
-  font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'Indie Flower', cursive;
   font-size: 1em;
 }
